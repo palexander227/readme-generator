@@ -18,18 +18,96 @@ let questions = [
         name:"install",
         message:"How should the application be installed?",
         type:"input",
-    },    
+    },
+
+    {
+        name:"usage",
+        message:"Enter the usage.",
+        type:"input",
+    },
+
+    {
+        name:"test",
+        message:"How to run tests.",
+        type:"input",
+    },
+    
+    {
+        name:"questions",
+        message:"Enter the question.",
+        type:"input",
+    },
+    
+    {
+        name:"contributing",
+        message:"Steps to contribute:",
+        type:"input",
+    }, 
+    
+    {
+        name:"license",
+        message:"Enter the license.",
+        type:"list",
+        choices:[
+            "CC", "GPL", "ISC", "MIT", "WTFPL", "NCSA"
+        ]
+    }, 
+    
+    {
+        name:"github",
+        message:"What is your Github username?",
+        type:"input",
+    },
+
+    {
+        name:"email",
+        message:"What is your email?",
+        type:"input",
+    }
 ]
 
 const formatted = ans =>{
     return(
 `# ${ans.title}
 
+![license badge](https://img.shields.io/badge/License-${ans.license}-blue)
+
 ${ans.description}
+
+[Installation](#installation-instructions)  
+[Usage](#usage)  
+[Contributing](#contributing)  
+[Questions](#questions)  
+[Test](#test)    
+[License](#license)  
 
 ## Installation Instructions
 
 ${ans.install}
+
+## Usage 
+
+${ans.usage}
+
+## Contributing 
+
+${ans.contributing}
+
+## Questions
+
+${ans.questions}
+
+View Github issues at ${ans.github}/${ans.title}.
+
+Contact me with questions at ${ans.email}.
+
+## Test
+
+${ans.test}
+
+## License
+
+${ans.license}
 
 `
     )
@@ -39,7 +117,7 @@ ${ans.install}
 inquirer.prompt(questions)
     .then((answers)=>{
         console.log(answers)
-        fs.writeFile("readmeTest.md", formatted(answers), (err)=>{
+        fs.writeFile("README.md", formatted(answers), (err)=>{
             if(err){
                 return console.log(`There was an error writing the file: ${err}`)
             }
