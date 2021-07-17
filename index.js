@@ -1,6 +1,8 @@
+//We need to import these two "helpers" or we won't be able to get the code to work
 import inquirer from "inquirer"
 import * as fs from "fs"
 
+//Setting up our questions routine.
 let questions = [
     {
         name:"title",
@@ -66,6 +68,9 @@ let questions = [
     }
 ]
 
+//Here is where we format our answers to get printed to a file according to the appropriate 
+// markdown formalism. 
+
 const formatted = ans =>{
     return(
 `# ${ans.title}
@@ -113,6 +118,7 @@ ${ans.license}
     )
 }
 
+//Get inquirer to track and log the answers. Give us an error message if inappropriate input.
 
 inquirer.prompt(questions)
     .then((answers)=>{
