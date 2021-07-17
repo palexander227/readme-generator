@@ -1,8 +1,8 @@
-# app
+# README Generator
 
-![license badge](https://img.shields.io/badge/License-WTFPL-blue)
+![license badge](https://img.shields.io/badge/License-MIT-blue)
 
-short desc.
+This is a command line driven application to generate a README file given standard input data.
 
 [Installation](#installation-instructions)  
 [Usage](#usage)  
@@ -13,29 +13,29 @@ short desc.
 
 ## Installation Instructions
 
-from keyboard
+Clone this repo and run npm install, npm start. 
 
 ## Usage 
 
-as you like
+Used to generate README.md.
 
 ## Contributing 
 
-up to you
+Visit this repo and create an issue.
 
 ## Questions
 
-questions
+FAQ: what is the WTFPL? (Do a Google search.)
 
-View Github issues at pp/app.
+View Github issues at palexander227/README Generator.
 
-Contact me with questions at aa.
+Contact me with questions at ampledivisor@gmail.com.
 
 ## Test
 
-test as we go
+No tests included.
 
 ## License
 
-WTFPL
+MIT
 
